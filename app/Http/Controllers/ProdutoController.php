@@ -9,9 +9,9 @@ public function lista()
 
 	return view('listagem')->with('produtos',$produtos);
 }
-public function detalhe()
+public function detalhe($id)
 {
-  $id=GET['id'];	
+  
   $produto=DB::select("select * from produtos where id=?",[$id]);
   return view('detalhes')->with('produto',$produto[0]);
 }
